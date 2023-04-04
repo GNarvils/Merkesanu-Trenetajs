@@ -10,7 +10,7 @@ public class Target : MonoBehaviour
 
     public void Hit()
     {
-        transform.position = new Vector3(Random.Range(-5, 5), 1, 0);
+        transform.position = new Vector3(Random.Range(-5, 5), Random.Range(1, 5), Random.Range(-5, 5));
         trapits += 1f;
     }
 
