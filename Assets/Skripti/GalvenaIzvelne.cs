@@ -18,5 +18,8 @@ public class GalvenaIzvelne : MonoBehaviour {
 	public void doExitGame() {
 		Application.Quit();
 	}
-
+	public void Spele()
+	{
+		SceneManager.LoadScene("Spele", LoadSceneMode.Single);
+	}
 }
