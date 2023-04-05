@@ -7,23 +7,26 @@ public class Ierocis : MonoBehaviour {
     public Camera camera;
     public float sauts;
     public Text Izsauts;
-
+    public Spele skripts;
     void Update()
     {
         Izsauts.text = sauts + "";
-        if (Input.GetMouseButtonDown(0))
+        if (skripts.laikaAtskaite == true)
         {
-            sauts += 1f;
-            RaycastHit hit;
-
-            if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit))
+            if (Input.GetMouseButtonDown(0))
             {
+                sauts += 1f;
+                RaycastHit hit;
 
-                Target target = hit.transform.GetComponent<Target>();
-
-                if (target != null)
+                if (Physics.Raycast(camera.transform.position, camera.transform.forward, out hit))
                 {
-                    target.Hit();
+
+                    Target target = hit.transform.GetComponent<Target>();
+
+                    if (target != null)
+                    {
+                        target.Hit();
+                    }
                 }
             }
         }
