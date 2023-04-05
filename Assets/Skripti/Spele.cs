@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spele : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float laiks;
+    public bool laikaAtskaite;
+    public Text teksts;
+
+
     void Start()
     {
-        
+        laiks = 10;
+        laikaAtskaite = true;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+
+        if (laikaAtskaite == true)
+        {
+            laiks -= Time.deltaTime;
+            teksts.text = Mathf.Round(laiks) + "";
+            if (laiks < 0f)
+            {
+                laikaAtskaite = false;
+            }
+        }
+        else {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }

@@ -8,13 +8,15 @@ public class Target : MonoBehaviour
     public float trapits;
     public Text text;
 
+    public Spele skripts;
+
     public void Hit()
     {
         transform.position = new Vector3(Random.Range(-5, 5), Random.Range(1, 5), Random.Range(-5, 5));
         trapits += 1f;
     }
 
-    void Update() 
+    void Update()
     {
         text.text = trapits + "";
     }
