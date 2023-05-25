@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GalvenaIzvelne : MonoBehaviour {
-		//Iet Uz Scene Pirmsspele
-		public void Pirmsspele(){
+	public MDropDown mizvelne;
+	//Iet Uz Scene Pirmsspele
+	public void Pirmsspele(){
 			SceneManager.LoadScene ("Pirmsspele", LoadSceneMode.Single);
 		}
 		//Iet Uz Scene Iestatijumi

@@ -4,10 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Ierocis : MonoBehaviour {
-    public Camera camera;
+    public new Camera camera;
     public float sauts;
     public Text Izsauts;
     public Spele skripts;
+    public AudioSource saut;
+    void Start() {
+        saut = GetComponent<AudioSource>();
+    }
     void Update()
     {
         Izsauts.text = sauts + "";
@@ -15,6 +19,7 @@ public class Ierocis : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0))
             {
+                saut.Play();
                 sauts += 1f;
                 RaycastHit hit;
 

@@ -18,11 +18,30 @@ public class Spele : MonoBehaviour
     public float preci;
     public GameObject labi;
     public GameObject slikti;
+    public AudioClip[] muzika;
+    public AudioSource music;
+    public MDropDown mizvelne;
 
     void Start()
     {
+        music = GetComponent<AudioSource>();
         laiks = 10;
         laikaAtskaite = true;
+       if (mizvelne.muzikas == 0) {
+            AudioClip clip = muzika[0];
+            music.PlayOneShot(clip);
+        }
+        if (mizvelne.muzikas == 1)
+        {
+            AudioClip clip = muzika[1];
+            music.PlayOneShot(clip);
+        }
+        if (mizvelne.muzikas == 2)
+        {
+            AudioClip clip = muzika[2];
+            music.PlayOneShot(clip);
+        }
+     
     }
     void Update()
     {
