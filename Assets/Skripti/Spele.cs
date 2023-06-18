@@ -11,7 +11,25 @@ public class Spele : MonoBehaviour
     public Text teksts;
     public GameObject uzvara;
     public Ierocis sauts;
-    public Target nosauts;
+    public Target nosauts1;
+    public Target nosauts2;
+    public Target nosauts3;
+    public Target multi11;
+    public Target multi12;
+    public Target multi13;
+    public Target multi14;
+    public Target multi21;
+    public Target multi22;
+    public Target multi23;
+    public Target multi24;
+    public Target multi31;
+    public Target multi32;
+    public Target multi33;
+    public Target multi34;
+    public float Kopa1;
+    public float Kopa2;
+    public float Kopa3;
+    public float Kopa;
     public Text sauti;
     public Text nosauti;
     public Text precizi;
@@ -55,8 +73,12 @@ public class Spele : MonoBehaviour
                 laikaAtskaite = false;
                 uzvara.SetActive(true);
                 sauti.text = sauts.sauts + "";
-                nosauti.text = nosauts.trapits + "";
-                preci = nosauts.trapits / sauts.sauts * 100;
+                Kopa1 = nosauts1.trapits + multi11.trapits + multi12.trapits + multi13.trapits + multi14.trapits;
+                Kopa2 = nosauts2.trapits + multi21.trapits + multi22.trapits + multi23.trapits + multi24.trapits;
+                Kopa3 = nosauts3.trapits + multi31.trapits + multi32.trapits + multi33.trapits + multi34.trapits;
+                Kopa = Kopa1 + Kopa2 + Kopa3;
+                nosauti.text = Kopa + "";
+                preci = Kopa / sauts.sauts * 100;
                 precizi.text = Mathf.Round(preci) + "%";
                 if (preci > 49f)
                 {
