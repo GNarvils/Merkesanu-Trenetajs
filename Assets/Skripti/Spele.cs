@@ -6,6 +6,15 @@ using UnityEngine.EventSystems;
 
 public class Spele : MonoBehaviour
 {
+    public GameObject Ierocis1;
+    public GameObject Ierocis2;
+    public GameObject Ierocis3;
+    public GameObject Aina1;
+    public GameObject Aina2;
+    public GameObject Aina3;
+    public GameObject Merkis1;
+    public GameObject Merkis2;
+    public GameObject Merkis3;
     public float laiks;
     public bool laikaAtskaite;
     public Text teksts;
@@ -38,27 +47,71 @@ public class Spele : MonoBehaviour
     public GameObject slikti;
     public AudioClip[] muzika;
     public AudioSource music;
-    public MDropDown mizvelne;
+    public int Ierocis = 0;
+    public int Ainas = 0;
+    public int Merkis = 0;
 
     void Start()
     {
-        music = GetComponent<AudioSource>();
+        Ierocis = PlayerPrefs.GetInt("Ieroics");
+        if (Ierocis == 0)
+        {
+            Ierocis1.SetActive(true);
+            Ierocis2.SetActive(false);
+            Ierocis3.SetActive(false);
+        }
+        else if (Ierocis == 1)
+        {
+            Ierocis1.SetActive(false);
+            Ierocis2.SetActive(true);
+            Ierocis3.SetActive(false);
+        }
+        else if (Ierocis == 2) 
+        {
+            Ierocis1.SetActive(false);
+            Ierocis2.SetActive(false);
+            Ierocis3.SetActive(true);
+        }
+        Ainas = PlayerPrefs.GetInt("Ainas");
+        if (Ainas == 0)
+        {
+            Aina1.SetActive(true);
+            Aina2.SetActive(false);
+            Aina3.SetActive(false);
+        }
+        else if (Ainas == 1)
+        {
+            Aina1.SetActive(false);
+            Aina2.SetActive(true);
+            Aina3.SetActive(false);
+        }
+        else if (Ainas == 2)
+        {
+            Aina1.SetActive(false);
+            Aina2.SetActive(false);
+            Aina3.SetActive(true);
+        }
+        Merkis = PlayerPrefs.GetInt("Merkis");
+        if (Merkis == 0)
+        {
+            Merkis1.SetActive(true);
+            Merkis2.SetActive(false);
+            Merkis3.SetActive(false);
+        }
+        else if (Merkis == 1)
+        {
+            Merkis1.SetActive(false);
+            Merkis2.SetActive(true);
+            Merkis3.SetActive(false);
+        }
+        else if (Merkis == 2)
+        {
+            Merkis1.SetActive(false);
+            Merkis2.SetActive(false);
+            Merkis3.SetActive(true);
+        }
         laiks = 10;
         laikaAtskaite = true;
-       if (mizvelne.muzikas == 0) {
-            AudioClip clip = muzika[0];
-            music.PlayOneShot(clip);
-        }
-        if (mizvelne.muzikas == 1)
-        {
-            AudioClip clip = muzika[1];
-            music.PlayOneShot(clip);
-        }
-        if (mizvelne.muzikas == 2)
-        {
-            AudioClip clip = muzika[2];
-            music.PlayOneShot(clip);
-        }
      
     }
     void Update()
