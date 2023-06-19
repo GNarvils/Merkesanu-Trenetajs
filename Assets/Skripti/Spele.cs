@@ -50,6 +50,7 @@ public class Spele : MonoBehaviour
     public int Ierocis = 0;
     public int Ainas = 0;
     public int Merkis = 0;
+    public int Muzikas = 0;
 
     void Start()
     {
@@ -110,6 +111,24 @@ public class Spele : MonoBehaviour
             Merkis2.SetActive(false);
             Merkis3.SetActive(true);
         }
+        Muzikas = PlayerPrefs.GetInt("Muzikas");
+        music = GetComponent<AudioSource>();
+        if (Muzikas == 0)
+        {
+            AudioClip clip = muzika[0];
+            music.PlayOneShot(clip);
+        }
+        if (Muzikas == 1)
+        {
+            AudioClip clip = muzika[1];
+            music.PlayOneShot(clip);
+        }
+        if (Muzikas == 2)
+        {
+            AudioClip clip = muzika[2];
+            music.PlayOneShot(clip);
+        }
+
         laiks = 10;
         laikaAtskaite = true;
      

@@ -23,6 +23,10 @@ public class SpeleIzvelne : MonoBehaviour
         Merki.value = PlayerPrefs.GetInt("Merkis");
 
         Merki.onValueChanged.AddListener(delegate { Medrop(Merki); });
+
+        Muzika.value = PlayerPrefs.GetInt("Muzikas");
+
+        Muzika.onValueChanged.AddListener(delegate { Mudrop(Muzika); });
     }
     public void Idrop(Dropdown Ieroci)
     {
@@ -79,6 +83,26 @@ public class SpeleIzvelne : MonoBehaviour
                 break;
             case 2:
                 PlayerPrefs.SetInt("Merkis", 2);
+                PlayerPrefs.Save();
+                break;
+        }
+    }
+   
+    public void Mudrop(Dropdown Muzika)
+    {
+        switch (Muzika.value)
+        {
+            case 0:
+                PlayerPrefs.SetInt("Muzikas", 0);
+                PlayerPrefs.Save();
+
+                break;
+            case 1:
+                PlayerPrefs.SetInt("Muzikas", 1);
+                PlayerPrefs.Save();
+                break;
+            case 2:
+                PlayerPrefs.SetInt("Muzikas", 2);
                 PlayerPrefs.Save();
                 break;
         }
