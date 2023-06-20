@@ -115,18 +115,18 @@ public class Spele : MonoBehaviour
         music = GetComponent<AudioSource>();
         if (Muzikas == 0)
         {
-            AudioClip clip = muzika[0];
-            music.PlayOneShot(clip);
+            music.clip = muzika[0];
+            music.Play();
         }
         if (Muzikas == 1)
         {
-            AudioClip clip = muzika[1];
-            music.PlayOneShot(clip);
+            music.clip = muzika[1];
+            music.Play();
         }
         if (Muzikas == 2)
         {
-            AudioClip clip = muzika[2];
-            music.PlayOneShot(clip);
+            music.clip = muzika[2];
+            music.Play();
         }
 
         laiks = 10;
