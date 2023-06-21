@@ -15,6 +15,9 @@ public class Spele : MonoBehaviour
     public GameObject Merkis1;
     public GameObject Merkis2;
     public GameObject Merkis3;
+    public GameObject Multi1;
+    public GameObject Multi2;
+    public GameObject Multi3;
     public float laiks;
     public bool laikaAtskaite;
     public Text teksts;
@@ -51,82 +54,172 @@ public class Spele : MonoBehaviour
     public int Ainas = 0;
     public int Merkis = 0;
     public int Muzikas = 0;
+    public int Trenins = 0;
 
     void Start()
     {
-        Ierocis = PlayerPrefs.GetInt("Ieroics");
-        if (Ierocis == 0)
+        Trenins = PlayerPrefs.GetInt("Trenins");
+        if (Trenins == 0)
         {
-            Ierocis1.SetActive(true);
-            Ierocis2.SetActive(false);
-            Ierocis3.SetActive(false);
+            Ierocis = PlayerPrefs.GetInt("Ieroics");
+            if (Ierocis == 0)
+            {
+                Ierocis1.SetActive(true);
+                Ierocis2.SetActive(false);
+                Ierocis3.SetActive(false);
+            }
+            else if (Ierocis == 1)
+            {
+                Ierocis1.SetActive(false);
+                Ierocis2.SetActive(true);
+                Ierocis3.SetActive(false);
+            }
+            else if (Ierocis == 2)
+            {
+                Ierocis1.SetActive(false);
+                Ierocis2.SetActive(false);
+                Ierocis3.SetActive(true);
+            }
+            Ainas = PlayerPrefs.GetInt("Ainas");
+            if (Ainas == 0)
+            {
+                Aina1.SetActive(true);
+                Aina2.SetActive(false);
+                Aina3.SetActive(false);
+            }
+            else if (Ainas == 1)
+            {
+                Aina1.SetActive(false);
+                Aina2.SetActive(true);
+                Aina3.SetActive(false);
+            }
+            else if (Ainas == 2)
+            {
+                Aina1.SetActive(false);
+                Aina2.SetActive(false);
+                Aina3.SetActive(true);
+            }
+            Merkis = PlayerPrefs.GetInt("Merkis");
+            if (Merkis == 0)
+            {
+                Merkis1.SetActive(true);
+                Merkis2.SetActive(false);
+                Merkis3.SetActive(false);
+            }
+            else if (Merkis == 1)
+            {
+                Merkis1.SetActive(false);
+                Merkis2.SetActive(true);
+                Merkis3.SetActive(false);
+            }
+            else if (Merkis == 2)
+            {
+                Merkis1.SetActive(false);
+                Merkis2.SetActive(false);
+                Merkis3.SetActive(true);
+            }
+            Muzikas = PlayerPrefs.GetInt("Muzikas");
+            music = GetComponent<AudioSource>();
+            if (Muzikas == 0)
+            {
+                music.clip = muzika[0];
+                music.Play();
+            }
+            if (Muzikas == 1)
+            {
+                music.clip = muzika[1];
+                music.Play();
+            }
+            if (Muzikas == 2)
+            {
+                music.clip = muzika[2];
+                music.Play();
+            }
         }
-        else if (Ierocis == 1)
-        {
-            Ierocis1.SetActive(false);
-            Ierocis2.SetActive(true);
-            Ierocis3.SetActive(false);
-        }
-        else if (Ierocis == 2) 
-        {
-            Ierocis1.SetActive(false);
-            Ierocis2.SetActive(false);
-            Ierocis3.SetActive(true);
-        }
-        Ainas = PlayerPrefs.GetInt("Ainas");
-        if (Ainas == 0)
-        {
-            Aina1.SetActive(true);
-            Aina2.SetActive(false);
-            Aina3.SetActive(false);
-        }
-        else if (Ainas == 1)
-        {
-            Aina1.SetActive(false);
-            Aina2.SetActive(true);
-            Aina3.SetActive(false);
-        }
-        else if (Ainas == 2)
-        {
-            Aina1.SetActive(false);
-            Aina2.SetActive(false);
-            Aina3.SetActive(true);
-        }
-        Merkis = PlayerPrefs.GetInt("Merkis");
-        if (Merkis == 0)
-        {
-            Merkis1.SetActive(true);
-            Merkis2.SetActive(false);
-            Merkis3.SetActive(false);
-        }
-        else if (Merkis == 1)
-        {
-            Merkis1.SetActive(false);
-            Merkis2.SetActive(true);
-            Merkis3.SetActive(false);
-        }
-        else if (Merkis == 2)
-        {
-            Merkis1.SetActive(false);
-            Merkis2.SetActive(false);
-            Merkis3.SetActive(true);
-        }
-        Muzikas = PlayerPrefs.GetInt("Muzikas");
-        music = GetComponent<AudioSource>();
-        if (Muzikas == 0)
-        {
-            music.clip = muzika[0];
-            music.Play();
-        }
-        if (Muzikas == 1)
-        {
-            music.clip = muzika[1];
-            music.Play();
-        }
-        if (Muzikas == 2)
-        {
-            music.clip = muzika[2];
-            music.Play();
+        else if (Trenins == 1) {
+            Ierocis = PlayerPrefs.GetInt("Ieroics");
+            if (Ierocis == 0)
+            {
+                Ierocis1.SetActive(true);
+                Ierocis2.SetActive(false);
+                Ierocis3.SetActive(false);
+            }
+            else if (Ierocis == 1)
+            {
+                Ierocis1.SetActive(false);
+                Ierocis2.SetActive(true);
+                Ierocis3.SetActive(false);
+            }
+            else if (Ierocis == 2)
+            {
+                Ierocis1.SetActive(false);
+                Ierocis2.SetActive(false);
+                Ierocis3.SetActive(true);
+            }
+            Ainas = PlayerPrefs.GetInt("Ainas");
+            if (Ainas == 0)
+            {
+                Aina1.SetActive(true);
+                Aina2.SetActive(false);
+                Aina3.SetActive(false);
+            }
+            else if (Ainas == 1)
+            {
+                Aina1.SetActive(false);
+                Aina2.SetActive(true);
+                Aina3.SetActive(false);
+            }
+            else if (Ainas == 2)
+            {
+                Aina1.SetActive(false);
+                Aina2.SetActive(false);
+                Aina3.SetActive(true);
+            }
+            Merkis = PlayerPrefs.GetInt("Merkis");
+            if (Merkis == 0)
+            {
+                Merkis1.SetActive(true);
+                Multi1.SetActive(true);
+                Merkis2.SetActive(false);
+                Multi2.SetActive(false);
+                Merkis3.SetActive(false);
+                Multi3.SetActive(false);
+            }
+            else if (Merkis == 1)
+            {
+                Merkis1.SetActive(false);
+                Multi1.SetActive(false);
+                Merkis2.SetActive(true);
+                Multi2.SetActive(true);
+                Merkis3.SetActive(false);
+                Multi3.SetActive(false);
+            }
+            else if (Merkis == 2)
+            {
+                Merkis1.SetActive(false);
+                Multi1.SetActive(false);
+                Merkis2.SetActive(false);
+                Multi2.SetActive(false);
+                Merkis3.SetActive(true);
+                Multi3.SetActive(true);
+            }
+            Muzikas = PlayerPrefs.GetInt("Muzikas");
+            music = GetComponent<AudioSource>();
+            if (Muzikas == 0)
+            {
+                music.clip = muzika[0];
+                music.Play();
+            }
+            if (Muzikas == 1)
+            {
+                music.clip = muzika[1];
+                music.Play();
+            }
+            if (Muzikas == 2)
+            {
+                music.clip = muzika[2];
+                music.Play();
+            }
         }
 
         laiks = 10;
