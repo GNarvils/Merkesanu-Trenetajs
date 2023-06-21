@@ -135,6 +135,9 @@ public class Spele : MonoBehaviour
                 music.clip = muzika[2];
                 music.Play();
             }
+
+            laiks = 60;
+            laikaAtskaite = true;
         }
         else if (Trenins == 1) {
             Ierocis = PlayerPrefs.GetInt("Ieroics");
@@ -220,10 +223,11 @@ public class Spele : MonoBehaviour
                 music.clip = muzika[2];
                 music.Play();
             }
+
+            laiks = 60;
+            laikaAtskaite = true;
         }
 
-        laiks = 10;
-        laikaAtskaite = true;
      
     }
     void Update()
