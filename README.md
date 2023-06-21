@@ -5,6 +5,12 @@ Spēle ļaus lietotājam arī mainīt iestatījumus, kā redzeslauku, skaņu, u.
 Kā arī spēle ļaus lietotājam mainīt pirmsspēles iestatījumus, kā piemeram modeli ierocim un mērķim.
 
 Darāmie darbi:
+- [X] Izstrādāt pāreju starp ainām.
+- [X] Izstrādāt iespēju iziet ārā no spēles ar pogu.
+- [X] Izstrādāt UI elementu palikšanu visos ekrāna izmēros. 
+- [X] Izstrādāt spēles galveno daļu (Šaušanu un skatīšanos).
+- [X] Izstrādāt spēles beigas aprēķinus un logus. 
+- [X] Izstrādāt modeļu maiņu.
 - [ ] Izstrādāt punktu sistēmu, kur ja nošauj dabū 100 punktus, bet ja neko nedara 2 sekundes zaudē 300.
 - [ ] Izstrādāt opciju izdzēst jauno rekordu.
 - [ ] Izstrādāt opciju mainīt starp vienšaušanas un multišaušanas spēlei.
