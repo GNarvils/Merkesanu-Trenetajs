@@ -9,7 +9,9 @@ Darāmie darbi:
 - [X] Izstrādāt iespēju iziet ārā no spēles ar pogu.
 - [X] Izstrādāt UI elementu palikšanu visos ekrāna izmēros. 
 - [X] Izstrādāt spēles galveno daļu (Šaušanu un skatīšanos).
-- [X] Izstrādāt spēles beigas aprēķinus un logus. 
+- [X] Izstrādāt spēles beigas aprēķinus un logus.
+- [X] Izstrādāt visus modeļus 3 katram (Ieroči, Mērķi un Ainas).
+- [X] Izstrādāt 3 mūzikas, kas atkārtojas un var mainīt.  
 - [X] Izstrādāt modeļu maiņu.
 - [ ] Izstrādāt punktu sistēmu, kur ja nošauj dabū 100 punktus, bet ja neko nedara 2 sekundes zaudē 300.
 - [ ] Izstrādāt opciju izdzēst jauno rekordu.
