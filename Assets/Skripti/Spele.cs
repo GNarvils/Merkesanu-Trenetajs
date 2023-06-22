@@ -227,8 +227,88 @@ public class Spele : MonoBehaviour
             laiks = 60;
             laikaAtskaite = true;
         }
+        else if (Trenins == 2)
+        {
+            Ierocis = PlayerPrefs.GetInt("Ieroics");
+            if (Ierocis == 0)
+            {
+                Ierocis1.SetActive(true);
+                Ierocis2.SetActive(false);
+                Ierocis3.SetActive(false);
+            }
+            else if (Ierocis == 1)
+            {
+                Ierocis1.SetActive(false);
+                Ierocis2.SetActive(true);
+                Ierocis3.SetActive(false);
+            }
+            else if (Ierocis == 2)
+            {
+                Ierocis1.SetActive(false);
+                Ierocis2.SetActive(false);
+                Ierocis3.SetActive(true);
+            }
+            Ainas = PlayerPrefs.GetInt("Ainas");
+            if (Ainas == 0)
+            {
+                Aina1.SetActive(true);
+                Aina2.SetActive(false);
+                Aina3.SetActive(false);
+            }
+            else if (Ainas == 1)
+            {
+                Aina1.SetActive(false);
+                Aina2.SetActive(true);
+                Aina3.SetActive(false);
+            }
+            else if (Ainas == 2)
+            {
+                Aina1.SetActive(false);
+                Aina2.SetActive(false);
+                Aina3.SetActive(true);
+            }
+            Merkis = PlayerPrefs.GetInt("Merkis");
+            if (Merkis == 0)
+            {
+                Merkis1.SetActive(true);
+                Merkis2.SetActive(false);
+                Merkis3.SetActive(false);
+            }
+            else if (Merkis == 1)
+            {
+                Merkis1.SetActive(false);
+                Merkis2.SetActive(true);
+                Merkis3.SetActive(false);
+            }
+            else if (Merkis == 2)
+            {
+                Merkis1.SetActive(false);
+                Merkis2.SetActive(false);
+                Merkis3.SetActive(true);
+            }
+            Muzikas = PlayerPrefs.GetInt("Muzikas");
+            music = GetComponent<AudioSource>();
+            if (Muzikas == 0)
+            {
+                music.clip = muzika[0];
+                music.Play();
+            }
+            if (Muzikas == 1)
+            {
+                music.clip = muzika[1];
+                music.Play();
+            }
+            if (Muzikas == 2)
+            {
+                music.clip = muzika[2];
+                music.Play();
+            }
 
-     
+            laiks = PlayerPrefs.GetFloat("Laiks"); ;
+            laikaAtskaite = true;
+        }
+
+
     }
     void Update()
     {
