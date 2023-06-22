@@ -17,7 +17,9 @@ public class Kustesanas : MonoBehaviour {
 	private void Start () {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-	}
+        sensX = PlayerPrefs.GetFloat("SensX");
+        sensY = PlayerPrefs.GetFloat("SensY");
+    }
 
     private void Update() {
         if (skripts.laikaAtskaite == true) {

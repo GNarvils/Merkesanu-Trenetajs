@@ -21,4 +21,5 @@ Darāmie darbi:
 - [ ] Izstrādāt skaļumu kontroli.
 - [ ] Izstrādāt mūzikas izslēgšanu vai ieslēgšanu.
 - [ ] Izstrādāt rezolūcijas opciju.
+- [X] Izstrādāt peles ātruma opciju opciju.
 - [X] Izstrādāt redzeslauka opciju.
