@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Audio;
 public class Iestatijumi : MonoBehaviour
 {
     public Slider FieldOFView;
@@ -13,6 +13,8 @@ public class Iestatijumi : MonoBehaviour
     Resolution[] resolutions;
     public List<Resolution> filtrs;
     public float hz;
+    public AudioMixer audioMix;
+    public Slider Skana;
     void Start()
     {
         FOV.text = PlayerPrefs.GetFloat("FOV") + "";
@@ -50,6 +52,8 @@ public class Iestatijumi : MonoBehaviour
         resolution.AddOptions(options);
         resolution.value = tagad;
         resolution.RefreshShownValue();
+
+        Skana.value = PlayerPrefs.GetFloat("vol");
     }
     public void SetResolution(int tagad) {
         Resolution resolution = filtrs[tagad];
@@ -60,6 +64,10 @@ public class Iestatijumi : MonoBehaviour
     {
         FOV.text = FieldOFView.value + "";
         PlayerPrefs.SetFloat("FOV", FieldOFView.value);
+    }
+    public void SetVolume(float vol) {
+        audioMix.SetFloat("vol", vol);
+        PlayerPrefs.SetFloat("vol", vol);
     }
 
     public void UpdateSens(Slider Atrums)

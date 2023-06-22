@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using UnityEngine.SceneManagement;
 public class Spele : MonoBehaviour
 {
     public Camera cam;
@@ -321,6 +321,12 @@ public class Spele : MonoBehaviour
 
         if (laikaAtskaite == true)
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                SceneManager.LoadScene("GalvenaIzvelne", LoadSceneMode.Single);
+            }
             laiks -= Time.deltaTime;
             teksts.text = Mathf.Round(laiks) + "";
             if (laiks < 0f)

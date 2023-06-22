@@ -18,8 +18,7 @@ Darāmie darbi:
 - [X] Izstrādāt opciju mainīt starp vienšaušanas un multišaušanas spēlei.
 - [ ] Izstrādāt savu pašu treniņu, kur var mainīt mērķa lielumu un laiku.
 - [ ] Izstrādāt tēmekļa opcijas, lielums, forma, krāsa.
-- [ ] Izstrādāt skaļumu kontroli.
-- [ ] Izstrādāt mūzikas izslēgšanu vai ieslēgšanu.
-- [ ] Izstrādāt rezolūcijas opciju.
+- [X] Izstrādāt skaļumu kontroli.
+- [X] Izstrādāt rezolūcijas opciju.
 - [X] Izstrādāt peles ātruma opciju opciju.
 - [X] Izstrādāt redzeslauka opciju.
