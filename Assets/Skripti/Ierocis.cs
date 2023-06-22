@@ -9,6 +9,7 @@ public class Ierocis : MonoBehaviour {
     public Text Izsauts;
     public Spele skripts;
     public AudioSource saut;
+
     void Start() {
         saut = GetComponent<AudioSource>();
     }

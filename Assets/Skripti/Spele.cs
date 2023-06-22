@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Spele : MonoBehaviour
 {
+    public Camera cam;
     public GameObject Ierocis1;
     public GameObject Ierocis2;
     public GameObject Ierocis3;
@@ -55,7 +56,12 @@ public class Spele : MonoBehaviour
     public int Merkis = 0;
     public int Muzikas = 0;
     public int Trenins = 0;
-
+    public float fov = 0;
+    void Awake()
+    {
+        fov = PlayerPrefs.GetFloat("FOV");
+        cam.fieldOfView = fov;
+    }
     void Start()
     {
         Trenins = PlayerPrefs.GetInt("Trenins");
