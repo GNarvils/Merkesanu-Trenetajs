@@ -13,12 +13,12 @@ public class Spele : MonoBehaviour
     public GameObject Aina1;
     public GameObject Aina2;
     public GameObject Aina3;
-    public GameObject Merkis1;
-    public GameObject Merkis2;
-    public GameObject Merkis3;
     public GameObject Multi1;
     public GameObject Multi2;
     public GameObject Multi3;
+    public GameObject M1Iz;
+    public GameObject M2Iz;
+    public GameObject M3Iz;
     public float laiks;
     public bool laikaAtskaite;
     public Text teksts;
@@ -57,6 +57,7 @@ public class Spele : MonoBehaviour
     public int Muzikas = 0;
     public int Trenins = 0;
     public float fov = 0;
+    public float izmers = 0;
     void Awake()
     {
         fov = PlayerPrefs.GetFloat("FOV");
@@ -65,8 +66,12 @@ public class Spele : MonoBehaviour
     void Start()
     {
         Trenins = PlayerPrefs.GetInt("Trenins");
+        izmers = PlayerPrefs.GetFloat("Izmers") - 1f;
         if (Trenins == 0)
         {
+            M1Iz.transform.localScale += new Vector3(0, 0, 0);
+            M2Iz.transform.localScale += new Vector3(0, 0, 0);
+            M3Iz.transform.localScale += new Vector3(0, 0, 0);
             Ierocis = PlayerPrefs.GetInt("Ieroics");
             if (Ierocis == 0)
             {
@@ -108,21 +113,21 @@ public class Spele : MonoBehaviour
             Merkis = PlayerPrefs.GetInt("Merkis");
             if (Merkis == 0)
             {
-                Merkis1.SetActive(true);
-                Merkis2.SetActive(false);
-                Merkis3.SetActive(false);
+                M1Iz.SetActive(true);
+                M2Iz.SetActive(false);
+                M3Iz.SetActive(false);
             }
             else if (Merkis == 1)
             {
-                Merkis1.SetActive(false);
-                Merkis2.SetActive(true);
-                Merkis3.SetActive(false);
+                M1Iz.SetActive(false);
+                M2Iz.SetActive(true);
+                M3Iz.SetActive(false);
             }
             else if (Merkis == 2)
             {
-                Merkis1.SetActive(false);
-                Merkis2.SetActive(false);
-                Merkis3.SetActive(true);
+                M1Iz.SetActive(false);
+                M2Iz.SetActive(false);
+                M3Iz.SetActive(true);
             }
             Muzikas = PlayerPrefs.GetInt("Muzikas");
             music = GetComponent<AudioSource>();
@@ -147,6 +152,9 @@ public class Spele : MonoBehaviour
         }
         else if (Trenins == 1) {
             Ierocis = PlayerPrefs.GetInt("Ieroics");
+            M1Iz.transform.localScale += new Vector3(0, 0, 0);
+            M2Iz.transform.localScale += new Vector3(0, 0, 0);
+            M3Iz.transform.localScale += new Vector3(0, 0, 0);
             if (Ierocis == 0)
             {
                 Ierocis1.SetActive(true);
@@ -187,29 +195,29 @@ public class Spele : MonoBehaviour
             Merkis = PlayerPrefs.GetInt("Merkis");
             if (Merkis == 0)
             {
-                Merkis1.SetActive(true);
+                M1Iz.SetActive(true);
                 Multi1.SetActive(true);
-                Merkis2.SetActive(false);
+                M2Iz.SetActive(false);
                 Multi2.SetActive(false);
-                Merkis3.SetActive(false);
+                M3Iz.SetActive(false);
                 Multi3.SetActive(false);
             }
             else if (Merkis == 1)
             {
-                Merkis1.SetActive(false);
+                M1Iz.SetActive(false);
                 Multi1.SetActive(false);
-                Merkis2.SetActive(true);
+                M2Iz.SetActive(true);
                 Multi2.SetActive(true);
-                Merkis3.SetActive(false);
+                M3Iz.SetActive(false);
                 Multi3.SetActive(false);
             }
             else if (Merkis == 2)
             {
-                Merkis1.SetActive(false);
+                M1Iz.SetActive(false);
                 Multi1.SetActive(false);
-                Merkis2.SetActive(false);
+                M2Iz.SetActive(false);
                 Multi2.SetActive(false);
-                Merkis3.SetActive(true);
+                M3Iz.SetActive(true);
                 Multi3.SetActive(true);
             }
             Muzikas = PlayerPrefs.GetInt("Muzikas");
@@ -235,6 +243,9 @@ public class Spele : MonoBehaviour
         }
         else if (Trenins == 2)
         {
+            M1Iz.transform.localScale += new Vector3(izmers, izmers, izmers);
+            M2Iz.transform.localScale += new Vector3(izmers, izmers, izmers);
+            M3Iz.transform.localScale += new Vector3(izmers, izmers, izmers);
             Ierocis = PlayerPrefs.GetInt("Ieroics");
             if (Ierocis == 0)
             {
@@ -276,21 +287,21 @@ public class Spele : MonoBehaviour
             Merkis = PlayerPrefs.GetInt("Merkis");
             if (Merkis == 0)
             {
-                Merkis1.SetActive(true);
-                Merkis2.SetActive(false);
-                Merkis3.SetActive(false);
+                M1Iz.SetActive(true);
+                M2Iz.SetActive(false);
+                M3Iz.SetActive(false);
             }
             else if (Merkis == 1)
             {
-                Merkis1.SetActive(false);
-                Merkis2.SetActive(true);
-                Merkis3.SetActive(false);
+                M1Iz.SetActive(false);
+                M2Iz.SetActive(true);
+                M3Iz.SetActive(false);
             }
             else if (Merkis == 2)
             {
-                Merkis1.SetActive(false);
-                Merkis2.SetActive(false);
-                Merkis3.SetActive(true);
+                M1Iz.SetActive(false);
+                M2Iz.SetActive(false);
+                M3Iz.SetActive(true);
             }
             Muzikas = PlayerPrefs.GetInt("Muzikas");
             music = GetComponent<AudioSource>();
