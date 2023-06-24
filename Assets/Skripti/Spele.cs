@@ -49,6 +49,7 @@ public class Spele : MonoBehaviour
     public Text sauti;
     public Text nosauti;
     public Text precizi;
+    public Text pun;
     public float preci;
     public GameObject labi;
     public GameObject slikti;
@@ -66,6 +67,10 @@ public class Spele : MonoBehaviour
     public float Red = 0;
     public float Green = 0;
     public float Blue = 0;
+    public float punkti = 0;
+    public float punktiHi = 0;
+    public float zaude = 0;
+    public GameObject Rekords;
     void Awake()
     {
         fov = PlayerPrefs.GetFloat("FOV");
@@ -393,6 +398,9 @@ public class Spele : MonoBehaviour
                 nosauti.text = Kopa + "";
                 preci = Kopa / sauts.sauts * 100;
                 precizi.text = Mathf.Round(preci) + "%";
+                zaude = (sauts.sauts - Kopa) * 50;
+                punkti = (Kopa * 100) - zaude; 
+                pun.text = punkti + "";
                 if (preci > 49f)
                 {
                     labi.SetActive(true);
@@ -400,6 +408,23 @@ public class Spele : MonoBehaviour
                 else {
                     slikti.SetActive(true);
                 }
+                if (Trenins == 0)
+                {
+                   punktiHi = PlayerPrefs.GetFloat("Single");
+                    if (punkti > punktiHi) {
+                        PlayerPrefs.SetFloat("Single", punkti);
+                        Rekords.SetActive(true);
+                    }
+                }
+                else if (Trenins == 1) {
+                   punktiHi = PlayerPrefs.GetFloat("Multi");
+                    if (punkti > punktiHi)
+                    {
+                        PlayerPrefs.SetFloat("Multi", punkti);
+                        Rekords.SetActive(true);
+                    }
+                }
+                
             }
         }
         else {

@@ -10,6 +10,14 @@ public class SpeleIzvelne : MonoBehaviour
     public Dropdown Aina;
     public Dropdown Merki;
     public Dropdown Muzika;
+    public Text SRekords;
+    public Text MRekords;
+
+    public void Awake() {
+    SRekords.text = PlayerPrefs.GetFloat("Single") + "";
+    MRekords.text = PlayerPrefs.GetFloat("Multi") + "";
+    }
+
     public void Start()
     {
         Ieroci.value = PlayerPrefs.GetInt("Ieroics");
@@ -27,6 +35,10 @@ public class SpeleIzvelne : MonoBehaviour
         Muzika.value = PlayerPrefs.GetInt("Muzikas");
 
         Muzika.onValueChanged.AddListener(delegate { Mudrop(Muzika); });
+    }
+    public void Update() {
+        SRekords.text = PlayerPrefs.GetFloat("Single") + "";
+        MRekords.text = PlayerPrefs.GetFloat("Multi") + "";
     }
     public void Idrop(Dropdown Ieroci)
     {
@@ -107,6 +119,7 @@ public class SpeleIzvelne : MonoBehaviour
                 break;
         }
     }
+
 
 }
 
