@@ -15,8 +15,19 @@ public class Iestatijumi : MonoBehaviour
     public float hz;
     public AudioMixer audioMix;
     public Slider Skana;
+    public Dropdown Temeklis;
+    public Slider Tizmers;
+    public Text TI;
     void Start()
     {
+
+        TI.text = PlayerPrefs.GetFloat("TemeklisIz") + "";
+        Tizmers.value = PlayerPrefs.GetFloat("TemeklisIz");
+        Tizmers.onValueChanged.AddListener(delegate { UpdateIzmers(Tizmers); });
+
+        Temeklis.value = PlayerPrefs.GetInt("Temeklis");
+        Temeklis.onValueChanged.AddListener(delegate { Tdrop(Temeklis); });
+
         FOV.text = PlayerPrefs.GetFloat("FOV") + "";
         FieldOFView.value = PlayerPrefs.GetFloat("FOV");
         FieldOFView.onValueChanged.AddListener(delegate { UpdateFOV(FieldOFView); });
@@ -75,5 +86,30 @@ public class Iestatijumi : MonoBehaviour
         sens.text = Atrums.value + "";
         PlayerPrefs.SetFloat("SensX", Atrums.value);
         PlayerPrefs.SetFloat("SensY", Atrums.value);
+    }
+
+    public void Tdrop(Dropdown Temeklis)
+    {
+        switch (Temeklis.value)
+        {
+            case 0:
+                PlayerPrefs.SetInt("Temeklis", 0);
+                PlayerPrefs.Save();
+
+                break;
+            case 1:
+                PlayerPrefs.SetInt("Temeklis", 1);
+                PlayerPrefs.Save();
+                break;
+            case 2:
+                PlayerPrefs.SetInt("Temeklis", 2);
+                PlayerPrefs.Save();
+                break;
+        }
+    }
+    public void UpdateIzmers(Slider Tizmers)
+    {
+        TI.text = (Mathf.Round(Tizmers.value * 100f)) / 100f + "";
+        PlayerPrefs.SetFloat("TemeklisIz", Tizmers.value);
     }
 }

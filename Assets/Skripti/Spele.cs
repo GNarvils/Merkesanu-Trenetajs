@@ -19,6 +19,9 @@ public class Spele : MonoBehaviour
     public GameObject M1Iz;
     public GameObject M2Iz;
     public GameObject M3Iz;
+    public GameObject Temeklis1;
+    public GameObject Temeklis2;
+    public GameObject Temeklis3;
     public float laiks;
     public bool laikaAtskaite;
     public Text teksts;
@@ -58,6 +61,8 @@ public class Spele : MonoBehaviour
     public int Trenins = 0;
     public float fov = 0;
     public float izmers = 0;
+    public int Temeklis = 0;
+    public float TemeklisIz = 0;
     void Awake()
     {
         fov = PlayerPrefs.GetFloat("FOV");
@@ -67,6 +72,30 @@ public class Spele : MonoBehaviour
     {
         Trenins = PlayerPrefs.GetInt("Trenins");
         izmers = PlayerPrefs.GetFloat("Izmers") - 1f;
+        Temeklis = PlayerPrefs.GetInt("Temeklis");
+        TemeklisIz = PlayerPrefs.GetFloat("TemeklisIz") - 1f;
+        if (Temeklis == 0)
+        {
+            Temeklis1.SetActive(true);
+            Temeklis2.SetActive(false);
+            Temeklis3.SetActive(false);
+        }
+        else if (Temeklis == 1)
+        {
+            Temeklis1.SetActive(false);
+            Temeklis2.SetActive(true);
+            Temeklis3.SetActive(false);
+        }
+        else if (Temeklis == 2)
+        {
+            Temeklis1.SetActive(false);
+            Temeklis2.SetActive(false);
+            Temeklis3.SetActive(true);
+        }
+        Temeklis1.transform.localScale += new Vector3(TemeklisIz, TemeklisIz, TemeklisIz);
+        Temeklis2.transform.localScale += new Vector3(TemeklisIz, TemeklisIz, TemeklisIz);
+        Temeklis3.transform.localScale += new Vector3(TemeklisIz, TemeklisIz, TemeklisIz);
+
         if (Trenins == 0)
         {
             M1Iz.transform.localScale += new Vector3(0, 0, 0);
