@@ -63,10 +63,22 @@ public class Spele : MonoBehaviour
     public float izmers = 0;
     public int Temeklis = 0;
     public float TemeklisIz = 0;
+    public float Red = 0;
+    public float Green = 0;
+    public float Blue = 0;
     void Awake()
     {
         fov = PlayerPrefs.GetFloat("FOV");
         cam.fieldOfView = fov;
+        Red = PlayerPrefs.GetFloat("Sarkans");
+        Green = PlayerPrefs.GetFloat("Zals");
+        Blue = PlayerPrefs.GetFloat("Zils");
+        byte RedI = (byte)Red;
+        byte GreenI = (byte)Green;
+        byte BlueI = (byte)Blue;
+        Temeklis1.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 100);
+        Temeklis2.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 100);
+        Temeklis3.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 100);
     }
     void Start()
     {

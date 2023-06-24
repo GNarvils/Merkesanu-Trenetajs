@@ -18,8 +18,28 @@ public class Iestatijumi : MonoBehaviour
     public Dropdown Temeklis;
     public Slider Tizmers;
     public Text TI;
+    public GameObject prew1;
+    public GameObject prew2;
+    public GameObject prew3;
+    public Slider Red;
+    public Slider Green;
+    public Slider Blue;
+    public Text RT;
+    public Text GT;
+    public Text BT;
     void Start()
     {
+        RT.text = PlayerPrefs.GetFloat("Sarkans") + "";
+        Red.value = PlayerPrefs.GetFloat("Sarkans");
+        Red.onValueChanged.AddListener(delegate { UpdateSarkans(Red); });
+
+        GT.text = PlayerPrefs.GetFloat("Zals") + "";
+        Green.value = PlayerPrefs.GetFloat("Zals");
+        Green.onValueChanged.AddListener(delegate { UpdateZals(Green); });
+
+        BT.text = PlayerPrefs.GetFloat("Zils") + "";
+        Blue.value = PlayerPrefs.GetFloat("Zils");
+        Blue.onValueChanged.AddListener(delegate { UpdateZils(Blue); });
 
         TI.text = PlayerPrefs.GetFloat("TemeklisIz") + "";
         Tizmers.value = PlayerPrefs.GetFloat("TemeklisIz");
@@ -52,7 +72,7 @@ public class Iestatijumi : MonoBehaviour
         int tagad = 0;
 
         for (int i = 0; i < filtrs.Count; i++) {
-            string option = filtrs[i].width + " x " + filtrs[i].height + " "+filtrs[i].refreshRate+ " Hz";
+            string option = filtrs[i].width + " x " + filtrs[i].height + " " + filtrs[i].refreshRate + " Hz";
             options.Add(option);
 
             if (filtrs[i].width == Screen.currentResolution.width && filtrs[i].height == Screen.currentResolution.height) {
@@ -95,15 +115,23 @@ public class Iestatijumi : MonoBehaviour
             case 0:
                 PlayerPrefs.SetInt("Temeklis", 0);
                 PlayerPrefs.Save();
-
+                prew1.SetActive(true);
+                prew2.SetActive(false);
+                prew3.SetActive(false);
                 break;
             case 1:
                 PlayerPrefs.SetInt("Temeklis", 1);
                 PlayerPrefs.Save();
+                prew1.SetActive(false);
+                prew2.SetActive(true);
+                prew3.SetActive(false);
                 break;
             case 2:
                 PlayerPrefs.SetInt("Temeklis", 2);
                 PlayerPrefs.Save();
+                prew1.SetActive(false);
+                prew2.SetActive(false);
+                prew3.SetActive(true);
                 break;
         }
     }
@@ -111,5 +139,29 @@ public class Iestatijumi : MonoBehaviour
     {
         TI.text = (Mathf.Round(Tizmers.value * 100f)) / 100f + "";
         PlayerPrefs.SetFloat("TemeklisIz", Tizmers.value);
+
+
     }
+    public void UpdateSarkans(Slider Red)
+    {
+        RT.text = Red.value + "";
+        PlayerPrefs.SetFloat("Sarkans", Red.value);
+
+    }
+
+    public void UpdateZals(Slider Green)
+    {
+        GT.text = Green.value + "";
+        PlayerPrefs.SetFloat("Zals", Green.value);
+
+    }
+
+    public void UpdateZils(Slider Blue)
+    {
+        BT.text = Blue.value + "";
+        PlayerPrefs.SetFloat("Zils", Blue.value);
+
+    }
+
 }
+
