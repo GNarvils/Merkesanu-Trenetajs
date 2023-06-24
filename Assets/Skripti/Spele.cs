@@ -81,9 +81,9 @@ public class Spele : MonoBehaviour
         byte RedI = (byte)Red;
         byte GreenI = (byte)Green;
         byte BlueI = (byte)Blue;
-        Temeklis1.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 100);
-        Temeklis2.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 100);
-        Temeklis3.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 100);
+        Temeklis1.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 255);
+        Temeklis2.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 255);
+        Temeklis3.GetComponent<Image>().color = new Color32(RedI, GreenI, BlueI, 255);
     }
     void Start()
     {
