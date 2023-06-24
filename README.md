@@ -13,7 +13,7 @@ Darāmie darbi:
 - [X] Izstrādāt visus modeļus 3 katram (Ieroči, Mērķi un Ainas).
 - [X] Izstrādāt 3 mūzikas, kas atkārtojas un var mainīt.  
 - [X] Izstrādāt modeļu maiņu.
-- [ ] Izstrādāt punktu sistēmu, kur ja nošauj dabū 100 punktus, bet ja neko nedara 2 sekundes zaudē 300.
+- [ ] Izstrādāt punktu sistēmu, kur ja nošauj dabū 100 punktus.
 - [ ] Izstrādāt opciju izdzēst jauno rekordu.
 - [X] Izstrādāt opciju mainīt starp vienšaušanas un multišaušanas spēlei.
 - [X] Izstrādāt savu pašu treniņu, kur var mainīt mērķa lielumu un laiku.
