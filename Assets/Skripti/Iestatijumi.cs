@@ -131,7 +131,7 @@ public class Iestatijumi : MonoBehaviour
         PlayerPrefs.SetFloat("FOV", FieldOFView.value);
     }
     public void SetVolume(float vol) {
-        audioMix.SetFloat("vol", vol);
+        AudioListener.volume = vol;
         PlayerPrefs.SetFloat("vol", vol);
     }
 
