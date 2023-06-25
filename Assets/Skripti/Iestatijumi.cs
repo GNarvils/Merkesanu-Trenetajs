@@ -27,8 +27,17 @@ public class Iestatijumi : MonoBehaviour
     public Text RT;
     public Text GT;
     public Text BT;
+    public Image KrasaP;
+    byte R = 0;
+    byte G = 0;
+    byte B = 0;
+
     void Start()
     {
+        R = (byte)PlayerPrefs.GetFloat("Sarkans");
+        G = (byte)PlayerPrefs.GetFloat("Zals");
+        B = (byte)PlayerPrefs.GetFloat("Zils");
+        KrasaP.color = new Color32(R, G, B, 255);
         RT.text = PlayerPrefs.GetFloat("Sarkans") + "";
         Red.value = PlayerPrefs.GetFloat("Sarkans");
         Red.onValueChanged.AddListener(delegate { UpdateSarkans(Red); });
@@ -47,6 +56,31 @@ public class Iestatijumi : MonoBehaviour
 
         Temeklis.value = PlayerPrefs.GetInt("Temeklis");
         Temeklis.onValueChanged.AddListener(delegate { Tdrop(Temeklis); });
+
+        switch (Temeklis.value)
+        {
+            case 0:
+                PlayerPrefs.SetInt("Temeklis", 0);
+                PlayerPrefs.Save();
+                prew1.SetActive(true);
+                prew2.SetActive(false);
+                prew3.SetActive(false);
+                break;
+            case 1:
+                PlayerPrefs.SetInt("Temeklis", 1);
+                PlayerPrefs.Save();
+                prew1.SetActive(false);
+                prew2.SetActive(true);
+                prew3.SetActive(false);
+                break;
+            case 2:
+                PlayerPrefs.SetInt("Temeklis", 2);
+                PlayerPrefs.Save();
+                prew1.SetActive(false);
+                prew2.SetActive(false);
+                prew3.SetActive(true);
+                break;
+        }
 
         FOV.text = PlayerPrefs.GetFloat("FOV") + "";
         FieldOFView.value = PlayerPrefs.GetFloat("FOV");
@@ -146,6 +180,10 @@ public class Iestatijumi : MonoBehaviour
     {
         RT.text = Red.value + "";
         PlayerPrefs.SetFloat("Sarkans", Red.value);
+        R = (byte)PlayerPrefs.GetFloat("Sarkans");
+        G = (byte)PlayerPrefs.GetFloat("Zals");
+        B = (byte)PlayerPrefs.GetFloat("Zils");
+        KrasaP.color = new Color32(R, G, B, 255);
 
     }
 
@@ -153,6 +191,10 @@ public class Iestatijumi : MonoBehaviour
     {
         GT.text = Green.value + "";
         PlayerPrefs.SetFloat("Zals", Green.value);
+        R = (byte)PlayerPrefs.GetFloat("Sarkans");
+        G = (byte)PlayerPrefs.GetFloat("Zals");
+        B = (byte)PlayerPrefs.GetFloat("Zils");
+        KrasaP.color = new Color32(R, G, B, 255);
 
     }
 
@@ -160,6 +202,10 @@ public class Iestatijumi : MonoBehaviour
     {
         BT.text = Blue.value + "";
         PlayerPrefs.SetFloat("Zils", Blue.value);
+        R = (byte)PlayerPrefs.GetFloat("Sarkans");
+        G = (byte)PlayerPrefs.GetFloat("Zals");
+        B = (byte)PlayerPrefs.GetFloat("Zils");
+        KrasaP.color = new Color32(R, G, B, 255);
 
     }
 
