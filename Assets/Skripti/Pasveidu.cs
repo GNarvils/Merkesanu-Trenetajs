@@ -21,7 +21,7 @@ public class Pasveidu : MonoBehaviour
         if (PlayerPrefs.GetFloat("Izmers") == 0f) {
             PlayerPrefs.SetFloat("Izmers", 1f);
         }
-        izmer.text = PlayerPrefs.GetFloat("Izmers") + "";
+        izmer.text = (Mathf.Round(PlayerPrefs.GetFloat("Izmers") * 100f)) / 100f + "";
         izmers.value = PlayerPrefs.GetFloat("Izmers");
         izmers.onValueChanged.AddListener(delegate { UpdateI(izmers); });
 

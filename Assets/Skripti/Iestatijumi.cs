@@ -54,7 +54,7 @@ public class Iestatijumi : MonoBehaviour
             PlayerPrefs.SetFloat("TemeklisIz", 1f);
         }
 
-        TI.text = PlayerPrefs.GetFloat("TemeklisIz") + "";
+        TI.text = (Mathf.Round(PlayerPrefs.GetFloat("TemeklisIz") * 100f)) / 100f + "";
         Tizmers.value = PlayerPrefs.GetFloat("TemeklisIz");
         Tizmers.onValueChanged.AddListener(delegate { UpdateIzmers(Tizmers); });
 
