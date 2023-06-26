@@ -50,6 +50,10 @@ public class Iestatijumi : MonoBehaviour
         Blue.value = PlayerPrefs.GetFloat("Zils");
         Blue.onValueChanged.AddListener(delegate { UpdateZils(Blue); });
 
+        if (PlayerPrefs.GetFloat("TemeklisIz") == 0f) {
+            PlayerPrefs.SetFloat("TemeklisIz", 1f);
+        }
+
         TI.text = PlayerPrefs.GetFloat("TemeklisIz") + "";
         Tizmers.value = PlayerPrefs.GetFloat("TemeklisIz");
         Tizmers.onValueChanged.AddListener(delegate { UpdateIzmers(Tizmers); });
@@ -81,11 +85,18 @@ public class Iestatijumi : MonoBehaviour
                 prew3.SetActive(true);
                 break;
         }
+        if (PlayerPrefs.GetFloat("FOV") == 0f) {
+            PlayerPrefs.SetFloat("SensX", 50f);
+        }
 
         FOV.text = PlayerPrefs.GetFloat("FOV") + "";
         FieldOFView.value = PlayerPrefs.GetFloat("FOV");
         FieldOFView.onValueChanged.AddListener(delegate { UpdateFOV(FieldOFView); });
 
+        if (PlayerPrefs.GetFloat("SensX") == 0f) {
+            PlayerPrefs.SetFloat("SensX", 100f);
+            PlayerPrefs.SetFloat("SensY", 100f);
+        }
         sens.text = PlayerPrefs.GetFloat("SensX") + "";
         Atrums.value = PlayerPrefs.GetFloat("SensX");
         Atrums.onValueChanged.AddListener(delegate { UpdateSens(Atrums); });

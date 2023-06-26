@@ -11,10 +11,16 @@ public class Pasveidu : MonoBehaviour
     public Text izmer;
     void Start()
     {
+        if (PlayerPrefs.GetFloat("Laiks") == 0f) {
+            PlayerPrefs.SetFloat("Laiks", 60f);
+        }
         laik.text = PlayerPrefs.GetFloat("Laiks") + "";
         laiks.value = PlayerPrefs.GetFloat("Laiks");
         laiks.onValueChanged.AddListener(delegate { UpdateL(laiks); });
 
+        if (PlayerPrefs.GetFloat("Izmers") == 0f) {
+            PlayerPrefs.SetFloat("Izmers", 1f);
+        }
         izmer.text = PlayerPrefs.GetFloat("Izmers") + "";
         izmers.value = PlayerPrefs.GetFloat("Izmers");
         izmers.onValueChanged.AddListener(delegate { UpdateI(izmers); });
